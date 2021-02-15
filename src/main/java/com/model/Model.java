@@ -60,6 +60,10 @@ public class Model {
     private void saveHtmlPage(String page) {
         try {
             Path path = Path.of(String.format("pages\\%s.html", fileName));
+            Path directory = Path.of("pages");
+
+            if (Files.notExists(directory))
+                Files.createDirectory(Path.of("pages"));
 
             if (Files.notExists(path))
                 Files.createFile(path);
