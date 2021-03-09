@@ -14,7 +14,7 @@ public class WebHelper {
                 return Jsoup.connect(url).get();
             } catch (IllegalArgumentException | IOException e) {
                 Logging.log(e, WebHelper.class);
-                System.out.println("Error. Uncorrect URL");
+                System.err.println("Error. Uncorrect URL");
                 throw new IllegalArgumentException();
             } catch (OutOfMemoryError e) {
                 Logging.log(e, WebHelper.class);

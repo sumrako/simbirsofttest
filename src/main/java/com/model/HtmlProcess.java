@@ -1,27 +1,25 @@
 package com.model;
 
+import com.service.Logging;
 import com.service.Outputs;
 import com.service.WebHelper;
-import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import com.service.Logging;
 
 import java.io.*;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.nio.file.FileSystemException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+import java.util.UUID;
 
 public class HtmlProcess implements WebProcessed {
     private final static String REGEX_SEPARATORS = "(\\s|,|\\t|\\.|!|\\?|\\\"|;|:|\\[|\\]|\\(|\\))+";
 
     private String fileName;
-    private Map<String, Integer> wordsCount = new HashMap<>();
-    private BufferedReader reader;
-    private String url;
 
     public void webPageProcessing() {
         try {
@@ -40,14 +38,19 @@ public class HtmlProcess implements WebProcessed {
             reader.close();
         } catch (URISyntaxException | IOException e) {
             Logging.log(e, getClass());
+            System.err.println("Error of input");
             System.exit(1);
         }
     }
 
     public void save(String page) {
         try {
-            Path path = Path.of(String.format("pages\\%s.html", fileName));
+            Path path = Path.of(String.format("pages\\%s%s.html", fileName, UUID.randomUUID()));
             Path directory = Path.of("pages");
+            File pathToFile = path.toFile();
+
+            if (page.getBytes("UTF-8").length > pathToFile.getUsableSpace())
+                throw new FileSystemException("Don't have free space in disk");
 
             if (Files.notExists(directory))
                 Files.createDirectory(Path.of("pages"));
@@ -55,16 +58,21 @@ public class HtmlProcess implements WebProcessed {
             if (Files.notExists(path))
                 Files.createFile(path);
 
-            BufferedWriter writer = new BufferedWriter(new FileWriter(path.toFile(), false));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(pathToFile, false));
             writer.write(page);
             writer.close();
+        } catch (FileSystemException e) {
+            System.err.println("Don't have free space in disk");
+            Logging.log(e, getClass());
         } catch (IOException e) {
+            System.err.println("Error of file");
             Logging.log(e, getClass());
         }
     }
 
     public void countUniqueWords(String content) {
         String[] words = content.split(REGEX_SEPARATORS);
+        Map<String, Integer> wordsCount = new HashMap<>();
 
         for (String word : words) {
             String curWord = word.toLowerCase(Locale.ROOT);
