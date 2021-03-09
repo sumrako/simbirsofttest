@@ -9,3 +9,264 @@ java.nio.file.NoSuchFileException: pages\ru.wikipedia.org.html
 	at com.model.Model.saveHtmlPage(Model.java:65)
 	at com.model.Model.webPageProcessing(Model.java:33)
 	at com.Main.main(Main.java:11)
+2021-03-09 23:42:52 ERROR HtmlProcess:12 - Don't have free space in disk
+java.nio.file.FileSystemException: Don't have free space in disk
+	at com.model.HtmlProcess.save(HtmlProcess.java:53)
+	at com.model.HtmlProcess.webPageProcessing(HtmlProcess.java:33)
+	at com.Main.main(Main.java:12)
+2021-03-10 00:03:56 ERROR HtmlProcess:12 - pages (Отказано в доступе)
+java.io.FileNotFoundException: pages (Отказано в доступе)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:291)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:234)
+	at java.base/java.io.FileWriter.<init>(FileWriter.java:113)
+	at com.model.HtmlProcess.save(HtmlProcess.java:62)
+	at com.model.HtmlProcess.webPageProcessing(HtmlProcess.java:33)
+	at com.Main.main(Main.java:12)
+2021-03-10 00:09:51 ERROR HtmlProcess:12 - pages\yandex.ru\247fb5c4-dfe1-48ec-9cd6-d3888e39002a.html
+java.nio.file.NoSuchFileException: pages\yandex.ru\247fb5c4-dfe1-48ec-9cd6-d3888e39002a.html
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:235)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:375)
+	at java.base/java.nio.file.Files.createFile(Files.java:652)
+	at com.model.HtmlProcess.save(HtmlProcess.java:60)
+	at com.model.HtmlProcess.webPageProcessing(HtmlProcess.java:33)
+	at com.Main.main(Main.java:12)
+2021-03-10 00:14:05 ERROR HtmlProcess:12 - pages\progi.pro\7e0e7126-f3b2-4c42-968b-28fb0442b4cf.html
+java.nio.file.NoSuchFileException: pages\progi.pro\7e0e7126-f3b2-4c42-968b-28fb0442b4cf.html
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:235)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:375)
+	at java.base/java.nio.file.Files.createFile(Files.java:652)
+	at com.model.HtmlProcess.save(HtmlProcess.java:61)
+	at com.model.HtmlProcess.webPageProcessing(HtmlProcess.java:33)
+	at com.Main.main(Main.java:12)
+2021-03-10 00:15:06 ERROR HtmlProcess:12 - pages\progi.pro\291497ae-84a9-44f0-a053-a6d654843ede.html
+java.nio.file.NoSuchFileException: pages\progi.pro\291497ae-84a9-44f0-a053-a6d654843ede.html
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:235)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:375)
+	at java.base/java.nio.file.Files.createFile(Files.java:652)
+	at com.model.HtmlProcess.save(HtmlProcess.java:61)
+	at com.model.HtmlProcess.webPageProcessing(HtmlProcess.java:33)
+	at com.Main.main(Main.java:12)
+2021-03-10 00:31:13 ERROR WebHelper:12 - HTTP error fetching URL
+org.jsoup.HttpStatusException: HTTP error fetching URL. Status=403, URL=https://www.cyberforum.ru/csharp-beginners/thread1354050.html
+	at org.jsoup.helper.HttpConnection$Response.execute(HttpConnection.java:590)
+	at org.jsoup.helper.HttpConnection$Response.execute(HttpConnection.java:540)
+	at org.jsoup.helper.HttpConnection.execute(HttpConnection.java:227)
+	at org.jsoup.helper.HttpConnection.get(HttpConnection.java:216)
+	at com.service.WebHelper.getDocument(WebHelper.java:14)
+	at com.model.HtmlProcess.webPageProcessing(HtmlProcess.java:29)
+	at com.Main.main(Main.java:12)
+2021-03-10 00:39:19 ERROR HtmlProcess:12 - pages\issue.life\2bd0426e-3d88-440b-acb5-55c7e1dcd811.html
+java.nio.file.NoSuchFileException: pages\issue.life\2bd0426e-3d88-440b-acb5-55c7e1dcd811.html
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:235)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:375)
+	at java.base/java.nio.file.Files.createFile(Files.java:652)
+	at com.model.HtmlProcess.save(HtmlProcess.java:61)
+	at com.model.HtmlProcess.webPageProcessing(HtmlProcess.java:33)
+	at com.Main.main(Main.java:12)
+2021-03-10 00:43:00 ERROR HtmlProcess:12 - pages\issue.life\7ad1efd4-ed00-4381-8049-e42d01aad256.html
+java.nio.file.NoSuchFileException: pages\issue.life\7ad1efd4-ed00-4381-8049-e42d01aad256.html
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:235)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:375)
+	at java.base/java.nio.file.Files.createFile(Files.java:652)
+	at com.model.HtmlProcess.save(HtmlProcess.java:61)
+	at com.model.HtmlProcess.webPageProcessing(HtmlProcess.java:33)
+	at com.Main.main(Main.java:12)
+2021-03-10 01:07:38 ERROR HtmlProcess:12 - Don't have free space in disk
+java.nio.file.FileSystemException: Don't have free space in disk
+	at com.model.HtmlProcess.save(HtmlProcess.java:56)
+	at com.model.HtmlProcess.webPageProcessing(HtmlProcess.java:34)
+	at com.Main.main(Main.java:12)
+2021-03-10 01:09:16 ERROR HtmlProcess:12 - pages\issue.life\d4e21fcf-d8ef-46cf-b69d-df0259b2d8ed.html
+java.nio.file.NoSuchFileException: pages\issue.life\d4e21fcf-d8ef-46cf-b69d-df0259b2d8ed.html
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:235)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:375)
+	at java.base/java.nio.file.Files.createFile(Files.java:652)
+	at com.model.HtmlProcess.save(HtmlProcess.java:62)
+	at com.model.HtmlProcess.webPageProcessing(HtmlProcess.java:34)
+	at com.Main.main(Main.java:12)
+2021-03-10 01:09:35 ERROR HtmlProcess:12 - pages\issue.life\c1f25459-847c-4a3d-b89f-9f6d12d7a2fb.html
+java.nio.file.NoSuchFileException: pages\issue.life\c1f25459-847c-4a3d-b89f-9f6d12d7a2fb.html
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:235)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:375)
+	at java.base/java.nio.file.Files.createFile(Files.java:652)
+	at com.model.HtmlProcess.save(HtmlProcess.java:63)
+	at com.model.HtmlProcess.webPageProcessing(HtmlProcess.java:35)
+	at com.Main.main(Main.java:12)
+2021-03-10 01:10:08 ERROR HtmlProcess:12 - pages\issue.life\edd043f4-85ed-4cca-ba38-cc47f7d38629.html
+java.nio.file.NoSuchFileException: pages\issue.life\edd043f4-85ed-4cca-ba38-cc47f7d38629.html
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:235)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:375)
+	at java.base/java.nio.file.Files.createFile(Files.java:652)
+	at com.model.HtmlProcess.save(HtmlProcess.java:63)
+	at com.model.HtmlProcess.webPageProcessing(HtmlProcess.java:35)
+	at com.Main.main(Main.java:12)
+2021-03-10 01:12:45 ERROR HtmlProcess:12 - pages\issue.life\82588a1d-85f1-4fcd-805c-3849cf3f376f.html
+java.nio.file.NoSuchFileException: pages\issue.life\82588a1d-85f1-4fcd-805c-3849cf3f376f.html
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:235)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:375)
+	at java.base/java.nio.file.Files.createFile(Files.java:652)
+	at com.model.HtmlProcess.save(HtmlProcess.java:63)
+	at com.model.HtmlProcess.webPageProcessing(HtmlProcess.java:35)
+	at com.Main.main(Main.java:12)
+2021-03-10 01:13:07 ERROR HtmlProcess:12 - pages\issue.life\7b39ecbf-5d66-41f0-afc9-5de3ebbb00e1.html
+java.nio.file.NoSuchFileException: pages\issue.life\7b39ecbf-5d66-41f0-afc9-5de3ebbb00e1.html
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:235)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:375)
+	at java.base/java.nio.file.Files.createFile(Files.java:652)
+	at com.model.HtmlProcess.save(HtmlProcess.java:63)
+	at com.model.HtmlProcess.webPageProcessing(HtmlProcess.java:35)
+	at com.Main.main(Main.java:12)
+2021-03-10 01:16:55 ERROR HtmlProcess:12 - pages\issue.life\aaa8a2d0-957b-4cce-af00-2de003f39350.html
+java.nio.file.NoSuchFileException: pages\issue.life\aaa8a2d0-957b-4cce-af00-2de003f39350.html
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:235)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:375)
+	at java.base/java.nio.file.Files.createFile(Files.java:652)
+	at com.model.HtmlProcess.save(HtmlProcess.java:63)
+	at com.model.HtmlProcess.webPageProcessing(HtmlProcess.java:35)
+	at com.Main.main(Main.java:12)
+2021-03-10 01:24:14 ERROR HtmlProcess:12 - Don't have free space in disk
+java.nio.file.FileSystemException: Don't have free space in disk
+	at com.model.HtmlProcess.save(HtmlProcess.java:56)
+	at com.model.HtmlProcess.webPageProcessing(HtmlProcess.java:33)
+	at com.Main.main(Main.java:12)
+2021-03-10 01:30:02 ERROR HtmlProcess:12 - Don't have free space in disk
+java.nio.file.FileSystemException: Don't have free space in disk
+	at com.model.HtmlProcess.save(HtmlProcess.java:56)
+	at com.model.HtmlProcess.webPageProcessing(HtmlProcess.java:33)
+	at com.Main.main(Main.java:12)
+2021-03-10 01:33:05 ERROR HtmlProcess:12 - pages\issue.life\8ae6cc69-c0ea-458b-9214-b81ba50ee6e5.html
+java.nio.file.NoSuchFileException: pages\issue.life\8ae6cc69-c0ea-458b-9214-b81ba50ee6e5.html
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:235)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:375)
+	at java.base/java.nio.file.Files.createFile(Files.java:652)
+	at com.model.HtmlProcess.save(HtmlProcess.java:58)
+	at com.model.HtmlProcess.webPageProcessing(HtmlProcess.java:33)
+	at com.Main.main(Main.java:12)
+2021-03-10 01:34:29 ERROR HtmlProcess:12 - pages\issue.life\c2de308e-4fb4-401f-af8f-fc4eae6f9262.html
+java.nio.file.NoSuchFileException: pages\issue.life\c2de308e-4fb4-401f-af8f-fc4eae6f9262.html
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:235)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:375)
+	at java.base/java.nio.file.Files.createFile(Files.java:652)
+	at com.model.HtmlProcess.save(HtmlProcess.java:62)
+	at com.model.HtmlProcess.webPageProcessing(HtmlProcess.java:33)
+	at com.Main.main(Main.java:12)
+2021-03-10 01:35:32 ERROR HtmlProcess:12 - pages\issue.life\3e511f0d-f12b-4b4a-a328-f26f38d000bc.html
+java.nio.file.NoSuchFileException: pages\issue.life\3e511f0d-f12b-4b4a-a328-f26f38d000bc.html
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:235)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:375)
+	at java.base/java.nio.file.Files.createFile(Files.java:652)
+	at com.model.HtmlProcess.save(HtmlProcess.java:59)
+	at com.model.HtmlProcess.webPageProcessing(HtmlProcess.java:33)
+	at com.Main.main(Main.java:12)
+2021-03-10 01:36:47 ERROR HtmlProcess:12 - pages\issue.life\7de9982c-0962-4816-8e40-bceb9aa8c6c5.html
+java.nio.file.NoSuchFileException: pages\issue.life\7de9982c-0962-4816-8e40-bceb9aa8c6c5.html
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:235)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:375)
+	at java.base/java.nio.file.Files.createFile(Files.java:652)
+	at com.model.HtmlProcess.save(HtmlProcess.java:59)
+	at com.model.HtmlProcess.webPageProcessing(HtmlProcess.java:33)
+	at com.Main.main(Main.java:12)
+2021-03-10 01:37:40 ERROR HtmlProcess:12 - pages\issue.life\58356cea-39bf-4fb3-b09f-e8d68e6fde1c.html
+java.nio.file.NoSuchFileException: pages\issue.life\58356cea-39bf-4fb3-b09f-e8d68e6fde1c.html
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:235)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:375)
+	at java.base/java.nio.file.Files.createFile(Files.java:652)
+	at com.model.HtmlProcess.save(HtmlProcess.java:58)
+	at com.model.HtmlProcess.webPageProcessing(HtmlProcess.java:33)
+	at com.Main.main(Main.java:12)
+2021-03-10 01:38:07 ERROR HtmlProcess:12 - pages\docs.oracle.com\b827450f-509f-4e22-8ed8-fcd7fb87893b.html
+java.nio.file.NoSuchFileException: pages\docs.oracle.com\b827450f-509f-4e22-8ed8-fcd7fb87893b.html
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:235)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:375)
+	at java.base/java.nio.file.Files.createFile(Files.java:652)
+	at com.model.HtmlProcess.save(HtmlProcess.java:58)
+	at com.model.HtmlProcess.webPageProcessing(HtmlProcess.java:33)
+	at com.Main.main(Main.java:12)
+2021-03-10 01:39:40 ERROR HtmlProcess:12 - pages.docs.oracle.com\8f9bafd8-cd7a-4e23-bfbe-e9d5e4d31b35.html
+java.nio.file.NoSuchFileException: pages.docs.oracle.com\8f9bafd8-cd7a-4e23-bfbe-e9d5e4d31b35.html
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:235)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:375)
+	at java.base/java.nio.file.Files.createFile(Files.java:652)
+	at com.model.HtmlProcess.save(HtmlProcess.java:58)
+	at com.model.HtmlProcess.webPageProcessing(HtmlProcess.java:33)
+	at com.Main.main(Main.java:12)
+2021-03-10 01:42:31 ERROR WebHelper:12 - Malformed URL: java.nio.file.NoSuchFileException
+java.lang.IllegalArgumentException: Malformed URL: java.nio.file.NoSuchFileException
+	at org.jsoup.helper.HttpConnection.url(HttpConnection.java:76)
+	at org.jsoup.helper.HttpConnection.connect(HttpConnection.java:36)
+	at org.jsoup.Jsoup.connect(Jsoup.java:73)
+	at com.service.WebHelper.getDocument(WebHelper.java:14)
+	at com.model.HtmlProcess.webPageProcessing(HtmlProcess.java:29)
+	at com.Main.main(Main.java:12)
+Caused by: java.net.MalformedURLException: no protocol: java.nio.file.NoSuchFileException
+	at java.base/java.net.URL.<init>(URL.java:672)
+	at java.base/java.net.URL.<init>(URL.java:568)
+	at java.base/java.net.URL.<init>(URL.java:515)
+	at org.jsoup.helper.HttpConnection.url(HttpConnection.java:74)
+	... 5 more
+2021-03-10 01:42:47 ERROR HtmlProcess:12 - pages\yandex.ru\894ba485-f880-43e0-bef1-e8b4d142eb40.html
+java.nio.file.NoSuchFileException: pages\yandex.ru\894ba485-f880-43e0-bef1-e8b4d142eb40.html
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:235)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:375)
+	at java.base/java.nio.file.Files.createFile(Files.java:652)
+	at com.model.HtmlProcess.save(HtmlProcess.java:58)
+	at com.model.HtmlProcess.webPageProcessing(HtmlProcess.java:33)
+	at com.Main.main(Main.java:12)

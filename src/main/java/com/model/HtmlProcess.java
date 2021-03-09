@@ -8,9 +8,8 @@ import org.jsoup.nodes.Document;
 import java.io.*;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.nio.file.FileSystemException;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.*;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
@@ -21,6 +20,7 @@ public class HtmlProcess implements WebProcessed {
 
     private String fileName;
 
+    @Override
     public void webPageProcessing() {
         try {
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -43,14 +43,13 @@ public class HtmlProcess implements WebProcessed {
         }
     }
 
+    @Override
     public void save(String page) {
         try {
             Path path = Path.of(String.format("pages\\%s%s.html", fileName, UUID.randomUUID()));
             Path directory = Path.of("pages");
-            File pathToFile = path.toFile();
 
-            if (page.getBytes("UTF-8").length > pathToFile.getUsableSpace())
-                throw new FileSystemException("Don't have free space in disk");
+            File pathToFile = path.toFile();
 
             if (Files.notExists(directory))
                 Files.createDirectory(Path.of("pages"));
@@ -61,15 +60,13 @@ public class HtmlProcess implements WebProcessed {
             BufferedWriter writer = new BufferedWriter(new FileWriter(pathToFile, false));
             writer.write(page);
             writer.close();
-        } catch (FileSystemException e) {
-            System.err.println("Don't have free space in disk");
-            Logging.log(e, getClass());
         } catch (IOException e) {
             System.err.println("Error of file");
             Logging.log(e, getClass());
         }
     }
 
+    @Override
     public void countUniqueWords(String content) {
         String[] words = content.split(REGEX_SEPARATORS);
         Map<String, Integer> wordsCount = new HashMap<>();
