@@ -18,6 +18,7 @@ public class WebHelper {
                 throw new IllegalArgumentException();
             } catch (OutOfMemoryError e) {
                 Logging.log(e, WebHelper.class);
+                System.err.println("Dont have free memory!");
                 System.exit(1);
             }
         }
