@@ -1,8 +1,10 @@
 package com.model;
 
+import com.service.Outputs;
+import com.service.WebHelper;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import com.service.ErrorHanding;
+import com.service.Logging;
 
 import java.io.*;
 import java.net.URI;
@@ -13,8 +15,8 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
-public class Model {
-    private final static String REGEX_SEPARATORS = "(\\s|,|\t|\\.|!|\\?|\"|;|:|(\\[', '\\])|(\\(', '\\)))+";
+public class HtmlProcess implements WebProcessed {
+    private final static String REGEX_SEPARATORS = "(\\s|,|\\t|\\.|!|\\?|\\\"|;|:|\\[|\\]|\\(|\\))+";
 
     private String fileName;
     private Map<String, Integer> wordsCount = new HashMap<>();
@@ -23,41 +25,26 @@ public class Model {
 
     public void webPageProcessing() {
         try {
-            reader = new BufferedReader(new InputStreamReader(System.in));
-            url = reader.readLine();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            String url = reader.readLine();
 
-            Document document = getDocument(url);
+            Document document = WebHelper.getDocument(url);
             fileName = new URI(url).getHost();
 
             String pageInString = document.html();
-            saveHtmlPage(pageInString);
+            save(pageInString);
 
             String content = document.text();
             countUniqueWords(content);
 
             reader.close();
         } catch (URISyntaxException | IOException e) {
-            ErrorHanding.errorHanding(e, getClass());
+            Logging.log(e, getClass());
+            System.exit(1);
         }
     }
 
-    private Document getDocument(String url) throws IOException {
-        while (true) {
-            try {
-                return Jsoup.connect(url).get();
-            } catch (IllegalArgumentException | IOException e) {
-                ErrorHanding.errorHanding(e, getClass());
-                System.out.println("Error. Please repeat input URL:");
-
-                url = reader.readLine();
-            } catch (OutOfMemoryError e) {
-                ErrorHanding.errorHanding(e, getClass());
-                System.exit(1);
-            }
-        }
-    }
-
-    private void saveHtmlPage(String page) {
+    public void save(String page) {
         try {
             Path path = Path.of(String.format("pages\\%s.html", fileName));
             Path directory = Path.of("pages");
@@ -72,11 +59,11 @@ public class Model {
             writer.write(page);
             writer.close();
         } catch (IOException e) {
-            ErrorHanding.errorHanding(e, getClass());
+            Logging.log(e, getClass());
         }
     }
 
-    private void countUniqueWords(String content) {
+    public void countUniqueWords(String content) {
         String[] words = content.split(REGEX_SEPARATORS);
 
         for (String word : words) {
@@ -88,9 +75,7 @@ public class Model {
             }
         }
 
-        for (Map.Entry<String, Integer> pair : wordsCount.entrySet())
-            System.out.printf("%S - %d\n", pair.getKey(), pair.getValue());
-
+        Outputs.consoleOutput(wordsCount);
     }
 
     public static String getRegexSeparators() {
